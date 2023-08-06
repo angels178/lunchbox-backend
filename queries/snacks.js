@@ -2,7 +2,7 @@ const db = require("../db/dbConfig");
 
 const getAllSnacks = async () => {
   try {
-    const getSnacks = await db.any("select * from snacks");
+    const getSnacks = await db.any(`SELECT * FROM snacks`);
 
     return getSnacks;
   } catch (error) {
@@ -12,7 +12,7 @@ const getAllSnacks = async () => {
 
 const getSnacksById = async (id) => {
   try {
-    const snack = await db.any(`select * from snacks where id = $1`, id);
+    const snack = await db.any(`SELECT * FROM snacks WHERE id = $1`, id);
 
     return snack;
   } catch (error) {
@@ -23,7 +23,7 @@ const getSnacksById = async (id) => {
 const createSnack = async (snack) => {
   try {
     const createdSnack = await db.one(
-      `insert into snacks (name, url, type, released_date, rating, is_favorite) values($1, $2, $3, $4, $5, $6) returning *`,
+      `INSERT INTO snacks (name, url, type, released_date, rating, is_favorite) VALUES($1, $2, $3, $4, $5, $6) returning *`,
       [
         snack.name,
         snack.url,
@@ -43,7 +43,7 @@ const createSnack = async (snack) => {
 const deleteSnackById = async (id) => {
   try {
     const deletedSnack = await db.any(
-      `delete from snacks where id = $1 returning *`,
+      `DELETE FROM snacks WHERE id = $1 RETURNING *`,
       id
     );
 
@@ -56,7 +56,7 @@ const deleteSnackById = async (id) => {
 const updateSnack = async (id, snack) => {
   try {
     const updatedSnack = await db.any(
-      `update snacks set name = $1, url = $2, type = $3, released_date = $4, rating = $5, is_favorite = $6 where id = $7 returning *`,
+      `UPDATE snacks SET name = $1, url = $2, type = $3, released_date = $4, rating = $5, is_favorite = $6 WHERE id = $7 RETURNING *`,
       [
         snack.name,
         snack.url,
