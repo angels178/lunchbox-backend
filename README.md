@@ -1,8 +1,8 @@
-# Budget App Backend
+# Lunchbox App Backend
 
 ### Description
 
-The budget app backend is a server-side component of the budget application. It provides functionality for managing financial transactions and user accounts. Follow these steps to install and run the backend:
+The lunchbox app backend is a server-side component of the budget application. It provides functionality for managing snacks and drinks. Follow these steps to install and run the backend:
 
 ## Installation
 
