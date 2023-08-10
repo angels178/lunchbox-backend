@@ -2,7 +2,7 @@
 
 ### Description
 
-The lunchbox app backend is a server-side component of the budget application. It provides functionality for managing snacks and drinks. Follow these steps to install and run the backend:
+The lunchbox app backend is a server-side component of the lunchbox application. It provides functionality for managing snacks and drinks. Follow these steps to install and run the backend:
 
 ## Installation
 
